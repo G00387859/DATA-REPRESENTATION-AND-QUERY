@@ -1,0 +1,41 @@
+# to use this install package
+# pip install PyGithub
+from github import Github
+import requests
+
+# remove the minus sign from the key
+# you can add this to your code just don't commit it
+# or use an API key to your own repo
+g = Github("783a944b1517ffa7e494820254ce83d83552999b")
+
+#for repo in g.get_user().get_repos():
+#    print(repo.name)
+    #repo.edit(has_wiki=False)
+    # to see all the available attributes and methods
+    #print(dir(repo))
+repo = g.get_repo("G00387859/DATA-REPRESENTATION-AND-QUERYING")
+#print(repo.clone_url)
+fileInfo = repo.get_contents("test.txt")
+urlOfFile = fileInfo.download_url
+#print (urlOfFile)
+##response = requests.get(urlOfFile)
+contentOfFile = requests.get(urlOfFile).text
+#print (contentOfFile)
+newContents = contentOfFile + " more stuff \n"
+#print (newContents)
+gitHubResponse=repo.update_file(urlOfFile,"updated by prog",newContents,fileInfo.sha)
+print (gitHubResponse)
+
+(base) C:\Users\dm086_000\OneDrive\Documents\Semester2\Data Rep\Repo\DATA-REPRESENTATION-AND-QUERYING\Week 6>python lab06.03.02.py
+Traceback (most recent call last):
+  File "lab06.03.02.py", line 26, in <module>
+    gitHubResponse=repo.update_file(urlOfFile,"updated by prog",newContents,fileInfo.sha)
+  File "C:\Users\dm086_000\anaconda3\lib\site-packages\github\Repository.py", line 2093, in update_file
+    headers, data = self._requester.requestJsonAndCheck(
+  File "C:\Users\dm086_000\anaconda3\lib\site-packages\github\Requester.py", line 317, in requestJsonAndCheck
+    return self.__check(
+  File "C:\Users\dm086_000\anaconda3\lib\site-packages\github\Requester.py", line 342, in __check
+    raise self.__createException(status, responseHeaders, output)
+github.GithubException.UnknownObjectException: 404 {"message": "Not Found", "documentation_url": "https://docs.github.com/rest/reference/repos#create-or-update-file-contents"}
+
+(base) C:\Users\dm086_000\OneDrive\Documents\Semester2\Data Rep\Repo\DATA-REPRESENTATION-AND-QUERYING\Week 6>

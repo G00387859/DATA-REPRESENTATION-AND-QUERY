@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            Make a web page that outputs 1 to 10 (or N) and 
+            Make a web page that outputs all the values of an array.
+        </title>
+    </head>
+    <body>
+        <button onclick="printNums()">Print Numbers 1 - 10</button>
+        <button onclick="printArray()">Print Array</button>
+           <p id="demo"></p>
+           <br/>
+           <p id="demo1"></p>
+
+<script>
+    function printNums(){
+        var text = "";
+        var i;
+        for(i=0;i<11;i++){
+            text += i + "<br>"; 
+        }
+        document.getElementById("demo").innerHTML = text;
+    }
+    function printArray(){
+        var cars = [1,2,3,4,5,6,7,8,9,10,11];
+        var text = "";
+        var i;
+        for (i = 0; i < cars.length; i++) {
+            text += cars[i] + "<br>";
+        }
+        document.getElementById("demo1").innerHTML = text;
+    }
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+
+  <book category="cookery">
+    <title lang="en">Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <year>2005</year>
+    <ISBN>9785286325854</ISBN>
+  </book>
+  
+  <book category="techincal">
+    <title lang="en">Old Country Donegal</title>
+    <author>Des, Lesile, Rose Jane and Quail</author>
+    <year>2016</year>
+	<ISBN>9781840337174</ISBN>
+  </book>
+
+  <book category="technical">
+    <title lang="en">The Art and Science of Technical Analysis</title>
+    <author>Adam Grimes</author>
+    <year>2012</year>
+    <ISBN>97851286426737</ISBN>
+  </book>
+
+  <book category="cookery">
+    <title lang="en">Cooking for Cats</title>
+    <author>Debora Roberston</author>
+    <year>2020</year>
+	<ISBN>978191911624677</ISBN>
+  </book>
+</Library> 

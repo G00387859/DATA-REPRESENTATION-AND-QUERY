@@ -1,0 +1,88 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>
+    </title>
+</head> 
+<body>hi there
+    <p id="output1"></p>
+    <p id="output"></p>
+    <button onclick="getall()">GO</button>
+    <button onclick="createCar()">Create</button>
+    <button onclick="delectCar()">Delete</button>
+    <button onclick="updateCar()">Update</button>
+    
+</body>  
+      <script>
+           function delectCar(){
+              var car = {"reg":"12 D 1234"}
+              console.log(JSON.stringify(car));
+              $.ajax({
+                  "url":"http://127.0.0.1:5000/cars/"+encodeURI(car.reg),
+                  "method":"DELETE",
+                  "data":"",
+                  dataType:"JSON",
+                  contentType:"application/json; charset=utf-8",
+                  "success":function(result){
+                      console.log(result);
+                      document.getElementById("output").innerHTML = JSON.stringify(result);
+                  },
+                  "error":function(xhr,status,error){
+                      console.log("error "+status+" msg:"+error);
+                  }
+              });
+          }
+          function updateCar(){
+              var car = {"reg":"181 G 1234","make":"Ford","model":"Modeo","price":00}
+              console.log(JSON.stringify(car));
+              $.ajax({
+                  "url":"http://127.0.0.1:5000/cars/"+encodeURI(car.reg),
+                  "method":"PUT",
+                  "data":JSON.stringify(car),
+                  dataType:"JSON",
+                  contentType:"application/json; charset=utf-8",
+                  "success":function(result){
+                      console.log(result);
+                      document.getElementById("output").innerHTML = JSON.stringify(result);
+                  },
+                  "error":function(xhr,status,error){
+                      console.log("error "+status+" msg:"+error);
+                  }
+              });
+          }
+          function createCar(){
+              var car = {"reg":"12 D 1234","make":"Fiat","model":"punto","price":3000}
+              console.log(JSON.stringify(car));
+              $.ajax({
+                  "url":"http://127.0.0.1:5000/cars",
+                  "method":"POST",
+                  "data":JSON.stringify(car),
+                  dataType:"JSON",
+                  contentType:"application/json; charset=utf-8",
+                  "success":function(result){
+                      console.log(result);
+                      document.getElementById("output").innerHTML = JSON.stringify(result);
+                  },
+                  "error":function(xhr,status,error){
+                      console.log("error "+status+" msg:"+error);
+                  }
+              });
+          }
+          function getall(){
+              $.ajax({
+                  url:"cars",
+                  method:"GET",
+                  data:"",
+                  dataType:"JSON",
+                  success:function(result){
+                      console.log(result);
+                      document.getElementById("output1").innerHTML = JSON.stringify(result);
+                  },
+                  error:function(xhr,status,error){
+                      console.log("error "+status+" msg:"+error);
+                  }
+
+              });
+          }
+      </script>  
+</html>
