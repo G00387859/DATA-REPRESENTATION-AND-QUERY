@@ -1,0 +1,21 @@
+Step 1 create a virtual enviroment. venv and .gitignore
+venv :  python - m venv venv
+
+Step 2 run the virtual enviroment
+venv/Scripts/activate.bat # in my commander navigate into scripts to run activate.bat
+
+Step 3
+install Flask in the venv folder
+
+Step 4 Save the package list in a file called requirements.txt
+pip freeze > requirements.txt
+
+Step 5 Create a .gitignore file and put in venv/
+
+Step 6 Create a basic Flask server
+from flask import Flask, url_for, request, redirect, abort
+app = Flask(__name__, static_url_path='', static_folder='staticpages')
+@app.route('/')
+    def index():
+    return "hello"
+if __name__ == "__main__

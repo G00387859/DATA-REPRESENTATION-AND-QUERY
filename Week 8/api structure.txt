@@ -1,0 +1,45 @@
+﻿Action 
+Method
+URL
+Sample params
+Sample return
+Get all
+GET
+/books
+none
+[
+       {…},{…},{…}
+   ]
+Find by id
+GET
+/books/id
+none
+{ ”id":”1", ”title":”xxx",
+      ”author":”xxx", "price":3000
+   }
+Create
+POST
+/books
+{ ”title":”xxx",
+      ”author":”xxx", "price":3000
+   }
+{ ”id":”1", ”title":”xxx",
+      ”author":”xxx", "price":3000
+   }
+Update
+PUT
+/books/id
+{
+   "price":3000
+}
+{ ”id":”1", ”title":”xxx",
+      ”author":”xxx", "price":3000
+   }
+delete
+DELETE
+/books/id
+none
+{
+   "done":true
+}
+
