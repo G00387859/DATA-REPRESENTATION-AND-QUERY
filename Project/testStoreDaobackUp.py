@@ -1,7 +1,7 @@
-from storeDao1 import StoreDao
+from storeDao import StoreDao
 
 product1 = {
-    'productName': "Cheese",
+    'productName': "Crisps",
     'productType': 'Food',
     'productPrice': '4.95'
 
@@ -12,14 +12,14 @@ product2 = {
     'productPrice': '22'
 
 }
-#returnValue = StoreDao.insert(StoreDao,product1)
+returnValue = StoreDao.insert(StoreDao,product1)
 #print(returnValueC)
 #returnValue = StoreDao.create(StoreDao,product1)
 #returnValue = StoreDao.getAll(StoreDao)
 #returnValue = StoreDao.convertToDict(StoreDao)
 #print(returnValue)
 
-returnValue = StoreDao.findById(StoreDao,product1['productName'])
+#returnValue = StoreDao.findById(StoreDao,'somethingNice')
 #print("find By Id")
 #print(returnValue)
 
